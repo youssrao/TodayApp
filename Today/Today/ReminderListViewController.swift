@@ -10,6 +10,7 @@ import UIKit
 class ReminderListViewController: UICollectionViewController {
   //Diffable data source updates and animates the user interface when the data changes
   typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
+  typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
 
   var dataSource: DataSource!
 
@@ -36,6 +37,15 @@ class ReminderListViewController: UICollectionViewController {
       return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
 
             }
+
+    //append items and sections to snapshot and display this on screen
+    var snapshot = Snapshot()
+    snapshot.appendSections([0])
+    snapshot.appendItems(Reminder.testData.map { $0.title })
+    dataSource.apply(snapshot)
+
+    collectionView.dataSource = dataSource
+
 
   }
 
