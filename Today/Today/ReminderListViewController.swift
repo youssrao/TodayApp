@@ -14,9 +14,3 @@ class ReminderListViewController: UITableViewController {
 
 }
 
-
-extension ReminderListViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Reminder.testData.count
-    }
-}
