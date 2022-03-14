@@ -21,6 +21,7 @@
 		D46A5AFA27D3CC7500C8BBCA /* ReminderListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46A5AF927D3CC7500C8BBCA /* ReminderListViewController+DataSource.swift */; };
 		D4CF294927DFB14800A29095 /* ReminderDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CF294827DFB14800A29095 /* ReminderDoneButton.swift */; };
 		D4CF294B27DFB1B200A29095 /* ReminderListViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CF294A27DFB1B200A29095 /* ReminderListViewController+Actions.swift */; };
+		D4CF294D27DFCDC800A29095 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CF294C27DFCDC800A29095 /* ReminderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D46A5AF927D3CC7500C8BBCA /* ReminderListViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderListViewController+DataSource.swift"; sourceTree = "<group>"; };
 		D4CF294827DFB14800A29095 /* ReminderDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderDoneButton.swift; sourceTree = "<group>"; };
 		D4CF294A27DFB1B200A29095 /* ReminderListViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderListViewController+Actions.swift"; sourceTree = "<group>"; };
+		D4CF294C27DFCDC800A29095 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				D421F04127A9A45B000C7542 /* Assets.xcassets */,
 				D421F04327A9A45B000C7542 /* LaunchScreen.storyboard */,
 				D421F04627A9A45B000C7542 /* Info.plist */,
+				D4CF294C27DFCDC800A29095 /* ReminderViewController.swift */,
 			);
 			path = Today;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				D46A5AF727D3B8E200C8BBCA /* Date+Today.swift in Sources */,
 				D421F03927A9A459000C7542 /* AppDelegate.swift in Sources */,
 				D421F03B27A9A459000C7542 /* SceneDelegate.swift in Sources */,
+				D4CF294D27DFCDC800A29095 /* ReminderViewController.swift in Sources */,
 				D421F06927A9C544000C7542 /* Reminder.swift in Sources */,
 				D4CF294927DFB14800A29095 /* ReminderDoneButton.swift in Sources */,
 				D46A5AFA27D3CC7500C8BBCA /* ReminderListViewController+DataSource.swift in Sources */,
