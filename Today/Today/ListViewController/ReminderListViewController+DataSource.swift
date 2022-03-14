@@ -10,11 +10,11 @@ import UIKit
 extension ReminderListViewController {
   //Diffable data source updates and animates the user interface when the data changes
   typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
-  typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
+  typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Reminder.ID>
 
-  func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: String) {
+  func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: Reminder.ID) {
     //Specifies how to configure the content and appearance of a cell
-      let reminder = Reminder.testData[indexPath.item]
+      let reminder = reminders[indexPath.item]
       var contentConfiguration = cell.defaultContentConfiguration()
       contentConfiguration.text = reminder.title
       contentConfiguration.secondaryText = reminder.dueDate.dayAndTimeText
