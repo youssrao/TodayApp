@@ -14,12 +14,12 @@ extension ReminderListViewController {
 
   func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: Reminder.ID) {
     //Specifies how to configure the content and appearance of a cell
-      let reminder = reminders[indexPath.item]
-      var contentConfiguration = cell.defaultContentConfiguration()
-      contentConfiguration.text = reminder.title
-      contentConfiguration.secondaryText = reminder.dueDate.dayAndTimeText
-      contentConfiguration.secondaryTextProperties.font = UIFont.preferredFont(forTextStyle: .caption1)
-      cell.contentConfiguration = contentConfiguration
+    let reminder = reminder(for: id)
+    var contentConfiguration = cell.defaultContentConfiguration()
+    contentConfiguration.text = reminder.title
+    contentConfiguration.secondaryText = reminder.dueDate.dayAndTimeText
+    contentConfiguration.secondaryTextProperties.font = UIFont.preferredFont(forTextStyle: .caption1)
+    cell.contentConfiguration = contentConfiguration
 
     var doneButtonConfiguration = doneButtonConfiguration(for: reminder)
     doneButtonConfiguration.tintColor = UIColor.init(named: "TodayListCellDoneButtonTint")
@@ -42,6 +42,18 @@ extension ReminderListViewController {
     button.setImage(image, for: .normal)
     return UICellAccessory.CustomViewConfiguration(customView: button, placement: .leading(displayed: .always))
 
+  }
+
+  //Returns corresponding reminder from the reminders array
+  func reminder(for id: Reminder.ID) -> Reminder {
+    let index = reminders.indexOfReminder(with: id)
+    return reminders[index]
+  }
+
+  //Update corresponding reminder from the reminders array
+  func update(_ reminder: Reminder, with id: Reminder.ID) {
+    let index = reminders.indexOfReminder(with: id)
+    reminders[index] = reminder
   }
 
 
