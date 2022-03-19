@@ -29,6 +29,7 @@ class DatePickerContentView: UIView, UIContentView {
     super.init(frame: .zero)
     addPinnedSubview(datePicker)
     datePicker.preferredDatePickerStyle = .inline
+    datePicker.locale = Locale(identifier: "nl_NL")
   }
 
   required init?(coder: NSCoder) {
