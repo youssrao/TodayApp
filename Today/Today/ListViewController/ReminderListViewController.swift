@@ -32,6 +32,11 @@ class ReminderListViewController: UICollectionViewController {
     snapshot.appendItems(reminders.map { $0.id })
     dataSource.apply(snapshot)
 
+    let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didPressAddButton(_:)))
+    addButton.accessibilityLabel = NSLocalizedString("Add reminder", comment: "Add button accessibility label")
+    navigationItem.rightBarButtonItem = addButton
+
+
     updateSnapshot()
 
 
