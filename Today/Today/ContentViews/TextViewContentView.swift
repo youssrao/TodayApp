@@ -1,23 +1,23 @@
 //
-//  TextFieldContentView.swift
+//  TextViewContentView.swift
 //  Today
 //
-//  Created by Youssra Outelli on 15/03/2022.
+//  Created by Youssra Outelli on 19/03/2022.
 //
 
 import UIKit
 
-//custom text field object that displays the title in an editable text area
-class TextFieldContentView: UIView, UIContentView {
+//custom text field object that displays the notes in an editable text area
+class TextViewContentView: UIView, UIContentView {
   struct Configuration: UIContentConfiguration {
     var text: String? = ""
 
     func makeContentView() -> UIView & UIContentView {
-      return TextFieldContentView(self)
+      return TextViewContentView(self)
     }
   }
 
-  let textField = UITextField()
+  let textView = UITextView()
   var configuration: UIContentConfiguration {
     didSet {
       configure(configuration: configuration)
@@ -31,8 +31,9 @@ class TextFieldContentView: UIView, UIContentView {
   init(_ configuration: UIContentConfiguration) {
     self.configuration = configuration
     super.init(frame: .zero)
-    addPinnedSubview(textField, insets: UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16))
-    textField.clearButtonMode = .whileEditing
+    addPinnedSubview(textView, height: 200)
+    textView.backgroundColor = nil
+    textView.font = UIFont.preferredFont(forTextStyle: .body)
   }
 
   required init?(coder: NSCoder) {
@@ -41,12 +42,12 @@ class TextFieldContentView: UIView, UIContentView {
 
   func configure(configuration: UIContentConfiguration) {
     guard let configuration = configuration as? Configuration else { return }
-    textField.text = configuration.text
+    textView.text = configuration.text
   }
 }
 
 extension UICollectionViewListCell {
-  func textFieldConfiguration() -> TextFieldContentView.Configuration {
-    TextFieldContentView.Configuration()
+  func textViewConfiguration() -> TextViewContentView.Configuration {
+    TextViewContentView.Configuration()
   }
 }
