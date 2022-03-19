@@ -18,8 +18,8 @@ extension ReminderListViewController {
     snapshot.appendSections([0])
     snapshot.appendItems(reminders.map { $0.id })
     if !ids.isEmpty {
-               snapshot.reloadItems(ids)
-           }
+      snapshot.reloadItems(ids)
+    }
     dataSource.apply(snapshot)
   }
 
@@ -63,6 +63,10 @@ extension ReminderListViewController {
     button.setImage(image, for: .normal)
     return UICellAccessory.CustomViewConfiguration(customView: button, placement: .leading(displayed: .always))
 
+  }
+
+  func add(_ reminder: Reminder) {
+    reminders.append(reminder)
   }
 
   //Returns corresponding reminder from the reminders array
